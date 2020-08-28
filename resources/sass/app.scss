@@ -1,0 +1,194 @@
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//Documenti Importanti
+@import 'gestioneHomePage';
+@import 'gestionePaginaSearch';
+@import 'gestioneShowApartment';
+@import 'gestioneDashboardAreaPersonale';
+@import 'gestioneSponsors';
+@import 'gestioneStatistiche';
+@import 'gestionePagineEditCreateApartment';
+@import 'gestioneRegister&Login';
+@import 'gestioneDocumentazione';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #e9ecef;
+  color: #1b3c59;
+}
+.coordinate{
+  display: none;
+}
+a:hover{
+  text-decoration: none;
+}
+
+// nasconde la scrollbar dovesse apparire, ma la fa comunque funzionare
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: $primaryRed;
+}
+// gestione messaggi d'errore
+.alert {
+  -webkit-box-shadow: 0px 1px 11px -5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 1px 11px -5px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 11px -5px rgba(0, 0, 0, 0.3);
+  .container{
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+// messaggi d'errore nella login
+.invalid-feedback {
+  width: 250px;
+}
+
+// customizzazoine dropdown header
+.dropdown-menu{
+  border-radius: 13px;
+  border: 1px solid $primaryRed;
+  -webkit-box-shadow: 0px 1px 11px -5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 1px 11px -5px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 11px -5px rgba(0, 0, 0, 0.3);
+}
+///////////////////////////////////////////////////////////////////
+//////////////////      PAGINE D'ERRORE      //////////////////////
+///////////////////////////////////////////////////////////////////
+
+.permissionDenied{
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    font-weight: 700;
+    font-size: 72px;
+    background: -webkit-linear-gradient( rgb(146, 23, 77), rgb(228, 29, 92));
+    // background: -webkit-linear-gradient(to right, rgb(146, 23, 77) 9.38%, rgb(228, 29, 92) 88.54%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+///////////////////////////////////////////////////////////////////
+//////////////////////////    HEADER  /////////////////////////////
+///////////////////////////////////////////////////////////////////
+header {
+  .navbar{
+    background-color: $primaryRed;
+    .logo {
+      img {
+        height: auto;
+        width: 160px;
+      }
+    }
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////
+//////////////////////////    FOOTER  /////////////////////////////
+///////////////////////////////////////////////////////////////////
+footer {
+  color: white;
+  background-color: $primaryRed;
+  .linkfooter{
+    border-bottom: 1px white solid;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    li {
+        text-align: left;
+        margin-left: 28%;
+        a {
+          color: white;
+          img {
+            width: 35%;
+            height: auto;
+            margin-left: 29px;
+          }
+        }
+        a:hover{
+          color: white;
+          font-weight: bold;
+        }
+      }
+      li:first-child{
+        text-align: center;
+        margin-left: 0;
+      }
+    }
+  .social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    span{
+      font-size: 20px;
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////
+//////////////////////////  MEDIA QUERIES /////////////////////////
+///////////////////////////////////////////////////////////////////
+
+/// MEDIA QUERIES SPECIFICHE ESISTONO IN CIASCUNA PAGINA IMPORTATA
+@media all and (max-width: 576px) {
+  .permissionDenied{
+    h1 {
+      font-size: 42px;
+    }
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .permissionDenied{
+    h1 {
+      font-size: 42px;
+    }
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media all and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media all and (min-width: 992px) and (max-width:1199px) {
+
+}
+
+// /* Extra large devices (large desktops, 1200px and up) */
+// @media all and (min-width: 1200px) {
+// } 
